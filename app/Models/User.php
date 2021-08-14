@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Personagem;
 
 class User extends Authenticatable
 {
@@ -40,4 +41,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Relação um para muitos
+     * Um usuario tem muitos personagens
+     */
+    public function Personagens()
+    {
+        return $this->hasMany(Personagem::class);
+    }
 }
