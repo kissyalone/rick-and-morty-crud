@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use App\Models\User;
 use Inertia\Inertia;
 
 use App\Http\Requests\PersonagemStoreRequest;
@@ -54,13 +55,13 @@ class HomeController extends Controller
             'personagem' => $response
         ]);
     }
+
+
     public function personagemStore(PersonagemStoreRequest $request)
     {
-        dd($request);
-        Auth::user()->personagens->create(
+        Auth::user()->personagens()->create(
             $request->validated()
         );
-
-        return Redirect::route('home')->with('success', 'Personagem Salvo');
+        return Redirect::route('page', 1)->with('success', 'Personagem salvo.');
     }
 }

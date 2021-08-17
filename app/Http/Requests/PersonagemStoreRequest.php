@@ -27,11 +27,8 @@ class PersonagemStoreRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:50'],
-            'user_id' => ['required', Rule::exists('users', 'id')->where(function ($query) {
-                $query->where('id', Auth::user()->id);
-            })],
             'species' => ['required', 'max:50'],
-            'image' => ['required', 'max:50'],
+            'image' => ['required', 'max:200'],
             'url' => ['nullable', 'max:100'],
         ];
     }
