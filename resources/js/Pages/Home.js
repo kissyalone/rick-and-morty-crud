@@ -3,6 +3,8 @@ import Layout from '@/Layouts/Layout';
 import { Link } from '@inertiajs/inertia-react';
 import { Head } from '@inertiajs/inertia-react';
 import { Row, Col, Card, Button } from 'react-bootstrap';
+import PaginacaoSimples from '@/Components/PaginacaoSimples';
+
 
 export default function Home(props) {
     const personagens = props.personagens;
@@ -28,18 +30,7 @@ export default function Home(props) {
                                     </Col>
                                 ))}
                             </Row>
-                            {paginacao.anterior ? (
-                                <Link href={route('page', paginacao.anterior)} as="button">Anterior</Link>
-                              
-                            ) : (
-                                <Button variant="link" disabled>Anteriror</Button>
-                            )}
-
-                            {paginacao.proxima ? (
-                                <Link href={route('page', paginacao.proxima)} as="button">Próxima</Link>
-                            ) : (
-                                <Button variant="link" disabled>Próxima</Button>
-                            )}
+                           <PaginacaoSimples paginacao={paginacao}/>
                         </div>
                     </div>
                 </div>
