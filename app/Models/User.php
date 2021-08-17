@@ -46,7 +46,7 @@ class User extends Authenticatable
      * Relação um para muitos
      * Um usuario tem muitos personagens
      */
-    public function Personagens()
+    public function personagens()
     {
         return $this->hasMany(Personagem::class);
     }
