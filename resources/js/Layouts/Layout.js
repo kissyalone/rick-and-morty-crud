@@ -3,11 +3,13 @@ import ApplicationLogo from '@/Components/ApplicationLogo';
 import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
+import FlashMessages from '@/Components/FlashMessages';
+
 import { Link, usePage } from '@inertiajs/inertia-react';
 
 export default function Layout({ children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
-    const { auth } = usePage().props;
+    const { auth, flash } = usePage().props;
     return (
         <div className="min-h-screen bg-gray-100">
             <nav className="bg-white border-b border-gray-100">
@@ -144,7 +146,10 @@ export default function Layout({ children }) {
                     
                 </div>
             </nav>
-            <main>{children}</main>
+            <main>
+                <FlashMessages />
+                {children}
+            </main>
         </div>
     );
 }
