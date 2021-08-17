@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use App\Models\User;
 use Inertia\Inertia;
+
+use App\Http\Requests\PersonagemStoreRequest;
 
 class HomeController extends Controller
 {
-    public function __invoke($page = 1)
+    public function index($page = 1)
     {
         return $this->getPersonagens($page);
         
@@ -39,6 +45,23 @@ class HomeController extends Controller
     }
     public function personagemDetalhe($id)
     {
-        dd($id);
+        $response = json_decode(file_get_contents(env('API_RICK_MORTY') . 'character/'. $id), true);
+
+        if(empty($response)){
+            //return
+        }
+        // dd($response);
+        return Inertia::render('PersonagemDetalhe',[
+            'personagem' => $response
+        ]);
+    }
+
+
+    public function personagemStore(PersonagemStoreRequest $request)
+    {
+        Auth::user()->personagens()->create(
+            $request->validated()
+        );
+        return Redirect::route('page', 1)->with('success', 'Personagem salvo.');
     }
 }

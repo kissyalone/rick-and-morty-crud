@@ -29,14 +29,14 @@ export default function Home(props) {
                                 ))}
                             </Row>
                             {paginacao.anterior ? (
-                                <Link href={route('home', paginacao.anterior)} as="button">Anterior</Link>
+                                <Link href={route('page', paginacao.anterior)} as="button">Anterior</Link>
                               
                             ) : (
                                 <Button variant="link" disabled>Anteriror</Button>
                             )}
 
                             {paginacao.proxima ? (
-                                <Link href={route('home', paginacao.proxima)} as="button">Próxima</Link>
+                                <Link href={route('page', paginacao.proxima)} as="button">Próxima</Link>
                             ) : (
                                 <Button variant="link" disabled>Próxima</Button>
                             )}
