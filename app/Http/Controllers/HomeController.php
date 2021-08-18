@@ -33,7 +33,10 @@ class HomeController extends Controller
 
         return Inertia::render('Home',[
             'personagens' => $personagens,
-            'paginacao' => $paginacao
+            'paginacao' => $paginacao,
+            'routeName' => 'personagem.detalhe',
+            'links' => null,
+            'title' => 'Rick and Morty - Personagens'
         ]);
     }
     public function paginacao($info_pagina, $pagina_atual)
@@ -62,6 +65,6 @@ class HomeController extends Controller
         Auth::user()->personagens()->create(
             $request->validated()
         );
-        return Redirect::route('page', 1)->with('success', 'Personagem salvo.');
+        return Redirect::route('personagem.detalhe',  $request->id)->with('success', 'Personagem salvo.');
     }
 }

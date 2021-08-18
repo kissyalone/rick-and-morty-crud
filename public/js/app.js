@@ -4384,6 +4384,72 @@ function Label(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/Components/MeusPersonagensCards.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/Components/MeusPersonagensCards.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ MeusPersonagensCards)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Row.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Card.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Components_Pagination__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Components/Pagination */ "./resources/js/Components/Pagination.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+function MeusPersonagensCards(_ref) {
+  var personagens = _ref.personagens,
+      routeName = _ref.routeName,
+      paginacao = _ref.paginacao;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
+      xs: 1,
+      md: 4,
+      className: "g-4",
+      children: personagens.map(function (_ref2) {
+        var id = _ref2.id,
+            name = _ref2.name,
+            image = _ref2.image;
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+            href: route(routeName, id),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Img, {
+                variant: "top",
+                src: image
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Body, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Title, {
+                  children: name
+                })
+              })]
+            })
+          })
+        }, id);
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
+      xs: 12,
+      md: 12,
+      className: "g-4",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Components_Pagination__WEBPACK_IMPORTED_MODULE_2__.default, {
+        links: paginacao
+      })
+    })]
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/Components/NavLink.js":
 /*!********************************************!*\
   !*** ./resources/js/Components/NavLink.js ***!
@@ -4456,6 +4522,149 @@ function Paginacao(_ref) {
       disabled: true,
       className: "m-2",
       children: "Pr\xF3xima"
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Components/Pagination.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Components/Pagination.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var PageLink = function PageLink(_ref) {
+  var active = _ref.active,
+      label = _ref.label,
+      url = _ref.url;
+  var className = classnames__WEBPACK_IMPORTED_MODULE_2___default()(['mr-1 mb-1', 'px-4 py-3', 'border border-solid border-gray-300 rounded', 'text-sm', 'hover:bg-white', 'focus:outline-none focus:border-indigo-700 focus:text-indigo-700'], {
+    'bg-white': active
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+    className: className,
+    href: url,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+      dangerouslySetInnerHTML: {
+        __html: label
+      }
+    })
+  });
+}; // Previous, if on first page
+// Next, if on last page
+// and dots, if exists (...)
+
+
+var PageInactive = function PageInactive(_ref2) {
+  var label = _ref2.label;
+  var className = classnames__WEBPACK_IMPORTED_MODULE_2___default()('mr-1 mb-1 px-4 py-3 text-sm border rounded border-solid border-gray-300 text-gray');
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: className,
+    dangerouslySetInnerHTML: {
+      __html: label
+    }
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function (_ref3) {
+  var _ref3$links = _ref3.links,
+      links = _ref3$links === void 0 ? [] : _ref3$links;
+  // dont render, if there's only 1 page (previous, 1, next)
+  if (links.length === 3) return null;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    className: "flex flex-wrap mt-6 -mb-1",
+    children: links.map(function (_ref4) {
+      var active = _ref4.active,
+          label = _ref4.label,
+          url = _ref4.url;
+      return url === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(PageInactive, {
+        label: label
+      }, label) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(PageLink, {
+        label: label,
+        active: active,
+        url: url
+      }, label);
+    })
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/Components/PersonagensCards.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/Components/PersonagensCards.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ PersonagensCards)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Row.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Card.js");
+/* harmony import */ var _Components_PaginacaoSimples__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Components/PaginacaoSimples */ "./resources/js/Components/PaginacaoSimples.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+function PersonagensCards(_ref) {
+  var personagens = _ref.personagens,
+      routeName = _ref.routeName,
+      paginacao = _ref.paginacao;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
+      xs: 1,
+      md: 4,
+      className: "g-4",
+      children: personagens.map(function (_ref2) {
+        var id = _ref2.id,
+            name = _ref2.name,
+            image = _ref2.image;
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Link, {
+            href: route(routeName, id),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Img, {
+                variant: "top",
+                src: image
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Body, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default.Title, {
+                  children: name
+                })
+              })]
+            })
+          })
+        }, id);
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__.default, {
+      xs: 12,
+      md: 12,
+      className: "g-4",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Components_PaginacaoSimples__WEBPACK_IMPORTED_MODULE_1__.default, {
+        paginacao: paginacao
+      })
     })]
   });
 }
@@ -5432,12 +5641,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Row.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Card.js");
-/* harmony import */ var _Components_PaginacaoSimples__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/PaginacaoSimples */ "./resources/js/Components/PaginacaoSimples.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
+/* harmony import */ var _Components_PersonagensCards__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Components/PersonagensCards */ "./resources/js/Components/PersonagensCards.js");
+/* harmony import */ var _Components_MeusPersonagensCards__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Components/MeusPersonagensCards */ "./resources/js/Components/MeusPersonagensCards.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -5446,47 +5652,34 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Home(props) {
-  var personagens = props.personagens;
-  var paginacao = props.paginacao;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__.default, {
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.usePage)().props,
+      personagens = _usePage$props.personagens,
+      title = _usePage$props.title,
+      routeName = _usePage$props.routeName,
+      paginacao = _usePage$props.paginacao;
+  var data = personagens.data,
+      links = personagens.links;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_1__.default, {
     errors: props.errors,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Head, {
-      title: "In\xEDcio"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Head, {
+      title: title
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "py-12",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "max-w-7xl mx-auto sm:px-6 lg:px-8",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "bg-white overflow-hidden shadow-sm sm:rounded-lg",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "p-6 bg-white border-b border-gray-200",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default, {
-              xs: 1,
-              md: 4,
-              className: "g-4",
-              children: personagens.map(function (_ref) {
-                var id = _ref.id,
-                    name = _ref.name,
-                    image = _ref.image;
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__.default, {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.Link, {
-                    href: route('personagem.detalhe', id),
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default, {
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default.Img, {
-                        variant: "top",
-                        src: image
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default.Body, {
-                        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_7__.default.Title, {
-                          children: name
-                        })
-                      })]
-                    })
-                  })
-                }, id);
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_PaginacaoSimples__WEBPACK_IMPORTED_MODULE_3__.default, {
+            children: data ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_MeusPersonagensCards__WEBPACK_IMPORTED_MODULE_4__.default, {
+              personagens: data,
+              routeName: routeName,
+              paginacao: links
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Components_PersonagensCards__WEBPACK_IMPORTED_MODULE_3__.default, {
+              personagens: personagens,
+              routeName: routeName,
               paginacao: paginacao
-            })]
+            })
           })
         })
       })
@@ -5571,6 +5764,7 @@ function PersonagemDetalhe(props) {
   var personagem = props.personagem;
 
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.useForm)({
+    id: personagem.id || '',
     name: personagem.name || '',
     image: personagem.image || '',
     species: personagem.species || '',
@@ -5586,8 +5780,6 @@ function PersonagemDetalhe(props) {
       processing = _useForm.processing,
       errors = _useForm.errors,
       reset = _useForm.reset;
-
-  var active = false;
 
   var submit = function submit(e) {
     e.preventDefault();
@@ -5691,152 +5883,7 @@ function PersonagemDetalhe(props) {
       })
     })]
   });
-} // import React, {useState} from 'react';
-// import Layout from '@/Layouts/Layout';
-// import { Head, InertiaLink, usePage, useForm } from '@inertiajs/inertia-react';
-// import { Link } from '@inertiajs/inertia-react';
-// import { Row, Col, Container, Button,Image, Form,InputGroup } from 'react-bootstrap';
-// import { Inertia } from '@inertiajs/inertia'
-// export default function PersonagemDetalhe(props) {
-// const personagem = props.personagem;
-// const { data, setData, errors, post, processing } = useForm({
-//     name: personagem.name || '',
-//     image: personagem.image || '',
-//     species: personagem.species || '',
-//     url: personagem.url || '',
-//     location: personagem.location.name || '',
-//     gender: personagem.gender || '',
-//     origin: personagem.origin.name || '',
-//     status: personagem.status || '',
-// });
-// const active = false;
-// function handleSubmit(e) {
-//     e.preventDefault();
-//     post(route('personagem.store'));
-// }
-// const [values, setValues] = useState({
-//     name: "",
-//     password: "",
-//     email: "",
-//   })
-//   function handleChange(e) {
-//     const key = e.target.id;
-//     const value = e.target.value
-//     setValues(values => ({
-//         ...values,
-//         [key]: value,
-//     }))
-//   }
-//   function handleSubmit(e) {
-//     e.preventDefault()
-//     Inertia.post('/teste', values)
-//   }
-// return (
-//     <form onSubmit={handleSubmit}>
-//       <label htmlFor="name">name:</label>
-//       <input id="name" value={values.name} onChange={handleChange} />
-//       <label htmlFor="password">password:</label>
-//       <input id="password"  type="password" value={values.password} onChange={handleChange} />
-//       <label htmlFor="email">Email:</label>
-//       <input id="email" value={values.email} onChange={handleChange} />
-//       <button type="submit">Submit</button>
-//     </form>
-//   )
-// }
-// return (
-//     <Layout errors={props.errors}>
-//         <Head title={personagem.name} />
-//         <div className="py-12">
-//             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-//                 <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-//                     <div className="p-6 bg-white border-b border-gray-200">
-//                         <form onSubmit={handleSubmit}>
-//                             <Container>
-//                                 <Row>
-//                                     <Col xs={12} md={4}>
-//                                         <Image src={data.image} roundedCircle />
-//                                     </Col>
-//                                     <Col xs={12} md={8}>
-//                                         <Row>
-//                                             <Form.Group as={Row} className="mb-3"   >
-//                                                 <Form.Label column sm={1}> Nome: </Form.Label>
-//                                                 { 
-//                                                     active ?
-//                                                         (<Col sm={11}> <Form.Control type="text" value={data.name} onChange={e => setData('name', e.target.value)}/> </Col>)
-//                                                     :   (<Col sm={11}> <Form.Control type="text" plaintext readOnly value={data.name} onChange={e => setData('name', e.target.value)}/> </Col>)
-//                                                 }
-//                                             </Form.Group>
-//                                             
-//                                                     <Col xs={12} md={6}> 
-//                                                         <Form.Label column sm={1}> Especie </Form.Label>
-//                                                         { 
-//                                                             active ?
-//                                                                 (<Col sm={11}> <Form.Control type="text" value={data.species} onChange={e => setData('species', e.target.value)}/> </Col>)
-//                                                             :   (<Col sm={11}> <Form.Control type="text" plaintext readOnly value={data.species} onChange={e => setData('species', e.target.value)}/> </Col>)
-//                                                         }
-//                                                     </Col>
-//                                                     <Col xs={12} md={6}>
-//                                                         <Form.Label column sm={1}> Localização </Form.Label>
-//                                                         { 
-//                                                             active ?
-//                                                                 (<Col sm={11}> <Form.Control type="text" value={data.location} onChange={e => setData('location', e.target.value)}/> </Col>)
-//                                                             :   (<Col sm={11}> <Form.Control type="text" plaintext readOnly value={data.location} onChange={e => setData('location', e.target.value)}/> </Col>)
-//                                                         }
-//                                                     </Col>
-//                                             </Form.Group>
-//                                             <Form.Group as={Row} className="mb-3" >
-//                                                     <Col xs={12} md={4}>
-//                                                         <Form.Label column sm={1}> Origem </Form.Label>
-//                                                         { 
-//                                                             active ?
-//                                                                 (<Col sm={11}> <Form.Control type="text" value={data.origin} onChange={e => setData('origin', e.target.value)}/> </Col>)
-//                                                             :   (<Col sm={11}> <Form.Control type="text"  readOnly value={data.origin} onChange={e => setData('origin', e.target.value)}/> </Col>)
-//                                                         }
-//                                                     </Col>
-//                                                     <Col xs={12} md={4}>
-//                                                         <Form.Label column sm={1}> Genero </Form.Label>
-//                                                         { 
-//                                                             active ?
-//                                                                 (<Col sm={11}> <Form.Control type="text" value={data.gender} onChange={e => setData('gender', e.target.value)}/> </Col>)
-//                                                             :   (<Col sm={11}> <Form.Control type="text" plaintext readOnly value={data.gender} onChange={e => setData('gender', e.target.value)}/> </Col>)
-//                                                         }
-//                                                     </Col>
-//                                                     <Col xs={12} md={4}>
-//                                                         <Form.Label column sm={1}> Status </Form.Label>
-//                                                         { 
-//                                                             active ?
-//                                                                 (<Col sm={11}> <Form.Control type="text" value={data.status} onChange={e => setData('status', e.target.value)}/> </Col>)
-//                                                             :   (<Col sm={11}> <Form.Control type="text" plaintext readOnly value={data.status} onChange={e => setData('status', e.target.value)}/> </Col>)
-//                                                         }
-//                                                     </Col>
-//                                             </Form.Group>
-//                                             <Form.Group as={Row} className="mb-3" >
-//                                                 <Col xs={12} md={12}>
-//                                                     {active ? (
-//                                                         <Col xs={12} md={4}>
-//                                                             <Button>Editar</Button>
-//                                                             {' '}
-//                                                             <Button>Excluir</Button>
-//                                                         </Col>
-//                                                     ) : (
-//                                                         <Col xs={12} md={4}>
-//                                                             <Button type="submit">Salvar</Button>
-//                                                         </Col>
-//                                                     ) }
-//                                                 </Col>
-//                                             </Form.Group>
-//                                         </Row>
-//                                     </Col>
-//                                 </Row>
-//                             </Container>
-//                         </form>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     </Layout>
-// );
-// }
+}
 
 /***/ }),
 
