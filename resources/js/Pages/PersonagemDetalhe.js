@@ -37,85 +37,33 @@ export default function PersonagemDetalhe(props) {
                                         <Col xs={12} md={4}>
                                              <Image src={data.image} roundedCircle />
                                         </Col>
-                                         <Col xs={12} md={8}>
-                                             <Row>
-                                                 <Form.Group as={Row} className="mb-3"   >
-                                                     <Form.Label column sm={1}> Nome: </Form.Label>
-                                                     { 
-                                                         active ?
-                                                             (<Col sm={11}> <Form.Control type="text" value={data.name} onChange={e => setData('name', e.target.value)}/> </Col>)
-                                                         :   (<Col sm={11}> <Form.Control type="text" plaintext readOnly value={data.name} onChange={e => setData('name', e.target.value)}/> </Col>)
-                                                     }
-                                                 </Form.Group>
-                                                 <Form.Group as={Row} className="mb-3" >
-                                                         <Col xs={12} md={6}> 
-                                                             <Form.Label column sm={1}> Especie </Form.Label>
-                                                             { 
-                                                                 active ?
-                                                                     (<Col sm={11}> <Form.Control type="text" value={data.species} onChange={e => setData('species', e.target.value)}/> </Col>)
-                                                                 :   (<Col sm={11}> <Form.Control type="text" plaintext readOnly value={data.species} onChange={e => setData('species', e.target.value)}/> </Col>)
-                                                             }
-                                                            
-                                                         </Col>
-                                                         <Col xs={12} md={6}>
-                                                             <Form.Label column sm={1}> Localização </Form.Label>
-                                                             { 
-                                                                 active ?
-                                                                     (<Col sm={11}> <Form.Control type="text" value={data.location} onChange={e => setData('location', e.target.value)}/> </Col>)
-                                                                 :   (<Col sm={11}> <Form.Control type="text" plaintext readOnly value={data.location} onChange={e => setData('location', e.target.value)}/> </Col>)
-                                                             }
-                                                         </Col>
-                                                 </Form.Group>
-                                                 <Form.Group as={Row} className="mb-3" >
-                                                         <Col xs={12} md={4}>
-                                                             <Form.Label column sm={1}> Origem </Form.Label>
-                                                             { 
-                                                                 active ?
-                                                                     (<Col sm={11}> <Form.Control type="text" value={data.origin} onChange={e => setData('origin', e.target.value)}/> </Col>)
-                                                                 :   (<Col sm={11}> <Form.Control type="text"  readOnly value={data.origin} onChange={e => setData('origin', e.target.value)}/> </Col>)
-                                                             }
-                                                         </Col>
-                                                         <Col xs={12} md={4}>
-                                                             <Form.Label column sm={1}> Genero </Form.Label>
-                                                             { 
-                                                                 active ?
-                                                                     (<Col sm={11}> <Form.Control type="text" value={data.gender} onChange={e => setData('gender', e.target.value)}/> </Col>)
-                                                                 :   (<Col sm={11}> <Form.Control type="text" plaintext readOnly value={data.gender} onChange={e => setData('gender', e.target.value)}/> </Col>)
-                                                             }
-                                                         </Col>
-                                                         <Col xs={12} md={4}>
-                                                             <Form.Label column sm={1}> Status </Form.Label>
-                                                             { 
-                                                                 active ?
-                                                                     (<Col sm={11}> <Form.Control type="text" value={data.status} onChange={e => setData('status', e.target.value)}/> </Col>)
-                                                                 :   (<Col sm={11}> <Form.Control type="text" plaintext readOnly value={data.status} onChange={e => setData('status', e.target.value)}/> </Col>)
-                                                             }
-                                                         </Col>
-                                                 </Form.Group>
-                                                 <Form.Group as={Row} className="mb-3" >
-                                                     <Col xs={12} md={12}>
-                                                         {active ? (
-                                                             <Col xs={12} md={4}>
-                                                                 <Button>Editar</Button>
-                                                                 {' '}
-                                                                 <Button>Excluir</Button>
-                                                             </Col>
-                                                         ) : (
-                                                             <Col xs={12} md={4}>
-                                                                 <Button type="submit">Salvar</Button>
-                                                             </Col>
-                                                         ) }
-                                                     </Col>
-                                                 </Form.Group>
-                                             </Row>
-                                         </Col>
-                                     </Row>
-                                 </Container>
-                             </form>
-                         </div>
-                     </div>
-                 </div>
-             </div>
+                                        <Col xs={12} md={8}>
+                                            <Row>     
+                                                <Col xs={12} md={12} className=""> 
+                                                    <Col className=" bg-gray-300 p-1"> <div className="text-5xl">{data.name}</div> </Col>
+                                                </Col>
+                                                <Col xs={12} md={6} className="mt-4"> 
+                                                    <Col className=" bg-gray-300 p-1"> <div className="text-3xl">Espécie: {data.species}</div> </Col>
+                                                </Col>
+                                                <Col xs={12} md={6} className="mt-4"> 
+                                                    <Col className=" bg-gray-300 p-1"> <div className="text-3xl">Gênero: {data.gender}</div> </Col>
+                                                </Col>
+                                            
+                                                <Col xs={12} md={12} className="mt-3 mb-5"> 
+                                                    <Col className=" bg-gray-300 p-1"> <div className="text-3xl">Localização: {data.location}</div> </Col>
+                                                </Col>
+                                                <Col xs={12} md={{ span: 3, offset: 9 }} className="mt-5 ml-5">
+                                                    <Button type="submit" variant="flat" className="">Salvar Personagem</Button>
+                                                </Col>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </Container>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Layout>
     );
 }
@@ -258,7 +206,7 @@ export default function PersonagemDetalhe(props) {
     //                                                     :   (<Col sm={11}> <Form.Control type="text" plaintext readOnly value={data.name} onChange={e => setData('name', e.target.value)}/> </Col>)
     //                                                 }
     //                                             </Form.Group>
-    //                                             <Form.Group as={Row} className="mb-3" >
+    //                                             
     //                                                     <Col xs={12} md={6}> 
     //                                                         <Form.Label column sm={1}> Especie </Form.Label>
     //                                                         { 

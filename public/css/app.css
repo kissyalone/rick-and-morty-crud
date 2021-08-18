@@ -35076,6 +35076,15 @@ textarea.form-control-lg{
     transition:none
   }
 }
+.btn-flat {
+  --tw-bg-opacity: 1;
+  background-color: rgba(30, 58, 138, var(--tw-bg-opacity));
+  /* background-color:#38589d; */
+  color: white;
+}
+.btn-flat:hover{
+  color:#f3f4f6
+}
 
 .btn:hover{
   color:#212529
