@@ -1,5 +1,4 @@
 import React from 'react';
-import ValidationErrors from '@/Components/ValidationErrors';
 import { Head, useForm } from '@inertiajs/inertia-react';
 import { Row, Col, Container, Button,Image, Form,InputGroup } from 'react-bootstrap';
 import Layout from '@/Layouts/Layout';
@@ -14,8 +13,6 @@ export default function PersonagemDetalhe(props) {
         url: personagem.url || '',
         location: personagem.location.name || '',
         gender: personagem.gender || '',
-        origin: personagem.origin.name || '',
-        status: personagem.status || '',
     });
 
     const submit = (e) => {
@@ -26,7 +23,6 @@ export default function PersonagemDetalhe(props) {
     return (
         <Layout errors={props.errors}>
             <Head title={personagem.name} />
-            <ValidationErrors errors={errors} />
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
