@@ -29,14 +29,14 @@ export default function Layout({ children }) {
                                 <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex flex">
                                     <Link href={route('home')}  style={{ textDecoration: 'none' }}>
                                         <ButtonMenu className="">
-                                                Início
+                                            Início
                                         </ButtonMenu>
                                     </Link>
                                 </div>
                                 <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex flex">
                                     <Link href={route('personagem')}  style={{ textDecoration: 'none' }}>
                                         <ButtonMenu className="">
-                                                Meus personagens
+                                            Personagens
                                         </ButtonMenu>
                                     </Link>
                                 </div>
@@ -55,9 +55,9 @@ export default function Layout({ children }) {
                                         <Dropdown>
                                             <Dropdown.Trigger>
                                                 <span className="inline-flex rounded-md">
-                                                    <button
+                                                    <ButtonMenu
                                                         type="button"
-                                                        className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                                        className="inline-flex items-center border border-transparent leading-4 rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                                     >
                                                         {auth.name}
                                                         <svg className="ml-2 -mr-0.5 h-4 w-4"
@@ -71,7 +71,7 @@ export default function Layout({ children }) {
                                                                 clipRule="evenodd"
                                                             />
                                                         </svg>
-                                                    </button>
+                                                    </ButtonMenu>
                                                 </span>
                                             </Dropdown.Trigger>
                                             <Dropdown.Content>
