@@ -11,7 +11,7 @@ import Button from '@/Components/Button';
 
 export default function MeuPersonagemDetalhe(props) {
     const personagem = props.personagem;
-    const { data, setData, put, processing, errors, reset } = useForm({
+    const { data, setData, put, errors } = useForm({
         id: personagem.id || '',
         name: personagem.name || '',
         image: personagem.image || '',
