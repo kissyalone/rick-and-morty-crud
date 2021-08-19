@@ -19,14 +19,18 @@ class HomeController extends Controller
     }
     public function getPersonagens($page)
     {
-        $response = json_decode(file_get_contents(env('API_RICK_MORTY') . 'character/?page=' . $page), true);
+
+        try{
+            $response = json_decode(file_get_contents(env('API_RICK_MORTY') . '2/?page=' . $page), true);
+        }catch(\Exception $e){
+            return Inertia::render('Vazio');
+        }
        
         if(!empty($response['results']) && !empty($response['info'])){
             $personagens = $response['results'];
             $info = $response['info'];
         } else {
-            $personagens = null;
-            $info = null;
+            return Inertia::render('Vazio');
         }
 
         $paginacao = $this->paginacao($info, $page);
@@ -48,12 +52,15 @@ class HomeController extends Controller
     }
     public function personagemDetalhe($id)
     {
-        $response = json_decode(file_get_contents(env('API_RICK_MORTY') . 'character/'. $id), true);
+        try{
+            $response = json_decode(file_get_contents(env('API_RICK_MORTY') . 'character/'. $id), true);
+        }catch(\Exception $e){
+            return Inertia::render('Vazio');
+        }
 
         if(empty($response)){
-            //return
+            return Inertia::render('Vazio');
         }
-        // dd($response);
         return Inertia::render('PersonagemDetalhe',[
             'personagem' => $response
         ]);

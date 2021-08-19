@@ -13,8 +13,14 @@ class PersonagensController extends Controller
 {
     public function index()
     {
+        $personagens = Auth::user()->personagens()->orderByDesc('id')->paginate(10);
+
+        if($personagens->isEmpty()) {
+            return Inertia::render('Vazio');
+        }
+
         return Inertia::render('Home', [
-            'personagens' => Auth::user()->personagens()->orderByDesc('id')->paginate(10),
+            'personagens' => $personagens,
             'paginacao' => null,
             'routeName' => 'meu.personagem.detalhe',
             'title' => 'Rick and Morty - Meus Personagens'

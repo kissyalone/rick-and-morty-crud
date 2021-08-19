@@ -21,4 +21,7 @@ Route::delete('/meu/personagem/{id}')->name('meu.personagem.delete')->uses('Pers
 //Sobre
 Route::get('/sobre')->name('sobre')->uses('SobreController');
 
+//Vazio
+Route::inertia('/vazio', 'Vazio');
+
 
