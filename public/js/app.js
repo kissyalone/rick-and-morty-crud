@@ -5112,7 +5112,7 @@ function Layout(_ref) {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_ResponsiveNavLink__WEBPACK_IMPORTED_MODULE_4__.default, {
             href: route('personagem'),
             active: route().current('personagem'),
-            children: "Meus personagens"
+            children: "Personagens"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: "pt-2 pb-3 space-y-1",

@@ -127,7 +127,7 @@ export default function Layout({ children }) {
                     </div>
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink href={route('personagem')} active={route().current('personagem')}>
-                            Meus personagens
+                            Personagens
                         </ResponsiveNavLink>
                     </div>
                     <div className="pt-2 pb-3 space-y-1">
