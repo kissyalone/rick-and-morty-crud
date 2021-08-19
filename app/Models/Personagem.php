@@ -13,6 +13,8 @@ class Personagem extends Model
         'species',
         'image',
         'url',
+        'gender',
+        'location',
     ];
     /**
      * Relação muitos para um

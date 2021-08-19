@@ -20,6 +20,8 @@ class Personagens extends Migration
             $table->string('species');
             $table->string('image');
             $table->string('url');
+            $table->string('gender');
+            $table->string('location');
             $table->timestamps();
 
             $table->foreign('user_id')

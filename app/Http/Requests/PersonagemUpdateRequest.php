@@ -28,6 +28,10 @@ class PersonagemUpdateRequest extends FormRequest
         return [
             'name' => ['required', 'max:50'],
             'species' => ['required', 'max:50'],
+            'image' => ['required', 'max:200'],
+            'url' => ['required', 'max:300'],
+            'gender' => ['required', 'max:200'],
+            'location' => ['required', 'max:200'],
         ];
     }
 }

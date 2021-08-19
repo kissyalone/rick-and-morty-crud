@@ -8,7 +8,7 @@ import Button from '@/Components/Button';
 
 export default function PersonagemDetalhe(props) {
     const personagem = props.personagem;
-    const { data, setData, post, processing, errors, reset } = useForm({
+    const { data, post } = useForm({
         id: personagem.id || '',
         name: personagem.name || '',
         image: personagem.image || '',
