@@ -1,10 +1,13 @@
 import React from 'react';
 import ValidationErrors from '@/Components/ValidationErrors';
-import { Head, useForm, usePage } from '@inertiajs/inertia-react';
-import { Row, Col, Container, Button,Image } from 'react-bootstrap';
+import { Inertia } from '@inertiajs/inertia';
+import { Head, useForm } from '@inertiajs/inertia-react';
+import { Row, Col, Container,Image } from 'react-bootstrap';
 import Layout from '@/Layouts/Layout';
 import Input from '@/Components/Input';
 import Label from '@/Components/Label';
+import DeleteButton from '@/Components/DeleteButton';
+import Button from '@/Components/Button';
 
 export default function MeuPersonagemDetalhe(props) {
     const personagem = props.personagem;
@@ -21,7 +24,7 @@ export default function MeuPersonagemDetalhe(props) {
     };
 
     function destroy() {
-        if (confirm('Are you sure you want to delete this contact?')) {
+        if (confirm('Tem certeza que deseja excluir seu personagem?')) {
             Inertia.delete(route('meu.personagem.delete', data.id));
         }
     }
@@ -47,23 +50,25 @@ export default function MeuPersonagemDetalhe(props) {
                                         </Col>
                                         <Col xs={12} md={8}>
                                             <Row>     
-                                                <Col xs={12} md={12} className=""> 
+                                                <Col xs={12} md={12} className="mt-3"> 
                                                     <Col className="bg-gray-300 p-1"> 
                                                         <Label forInput="name" value="Nome" />
-                                                        <Input name="name" className="" value={data.name}  handleChange={onHandleChange}/>
+                                                        <Input name="name" className=" w-full" value={data.name}  handleChange={onHandleChange}/>
                                                     </Col>
                                                 </Col>
                                                 <Col xs={12} md={6} className="mt-4"> 
                                                     <Col className=" bg-gray-300 p-1">
                                                         <Label forInput="species" value="Espécie" />
-                                                        <Input name="species" className="" value={data.species} handleChange={onHandleChange}/>
+                                                        <Input name="species" className="w-full" value={data.species} handleChange={onHandleChange}/>
                                                     </Col>
                                                 </Col>
-                                                <Col xs={12} md={6} className="mt-5 ml-5">
-                                                    <Button type="submit" variant="flat" className="">Editar personagem</Button>
-                                                </Col>
-                                                <Col xs={12} md={6} className="mt-5 ml-5">
-                                                    <Button type="button" variant="warning" className="" target={destroy}>Excluir personagem</Button>
+                                                <Col xs={12} md={{ span: 2, offset:10}} className="mt-5">
+                                                    <Col xs={12} md={6} className="">
+                                                        <Button  className="bg-blue-900">Editar personagem</Button>
+                                                    </Col>
+                                                    <Col xs={12} md={6} >
+                                                        <DeleteButton onDelete={destroy} children="Excluir personagem"/>
+                                                    </Col>
                                                 </Col>
                                             </Row>
                                         </Col>

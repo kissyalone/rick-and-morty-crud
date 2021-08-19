@@ -1,7 +1,10 @@
 import React from 'react';
 import { Head, useForm } from '@inertiajs/inertia-react';
-import { Row, Col, Container, Button,Image, Form,InputGroup } from 'react-bootstrap';
+import { Row, Col, Container, Image } from 'react-bootstrap';
 import Layout from '@/Layouts/Layout';
+import Input from '@/Components/Input';
+import Label from '@/Components/Label';
+import Button from '@/Components/Button';
 
 export default function PersonagemDetalhe(props) {
     const personagem = props.personagem;
@@ -35,21 +38,33 @@ export default function PersonagemDetalhe(props) {
                                         </Col>
                                         <Col xs={12} md={8}>
                                             <Row>     
-                                                <Col xs={12} md={12} className=""> 
-                                                    <Col className=" bg-gray-300 p-1"> <div className="text-5xl">{data.name}</div> </Col>
+                                                <Col xs={12} md={12} className="mt-3">
+                                                    <Col className="bg-gray-300 p-1"> 
+                                                        <Label forInput="name" value="Nome" />
+                                                        <Input name="name" className="w-full" value={data.name} readOnly />
+                                                    </Col>
                                                 </Col>
                                                 <Col xs={12} md={6} className="mt-4"> 
-                                                    <Col className=" bg-gray-300 p-1"> <div className="text-3xl">Espécie: {data.species}</div> </Col>
-                                                </Col>
+                                                    <Col className="bg-gray-300 p-1"> 
+                                                            <Label forInput="species" value="Espécie" />
+                                                            <Input name="species" className="w-full" value={data.species} readOnly />
+                                                        </Col>
+                                                    </Col>
                                                 <Col xs={12} md={6} className="mt-4"> 
-                                                    <Col className=" bg-gray-300 p-1"> <div className="text-3xl">Gênero: {data.gender}</div> </Col>
+                                                    <Col className="bg-gray-300 p-1"> 
+                                                        <Label forInput="gender" value="Gênero" />
+                                                        <Input name="gender" className="w-full" value={data.gender} readOnly />
+                                                    </Col>
                                                 </Col>
                                             
                                                 <Col xs={12} md={12} className="mt-3 mb-5"> 
-                                                    <Col className=" bg-gray-300 p-1"> <div className="text-3xl">Localização: {data.location}</div> </Col>
+                                                    <Col className="bg-gray-300 p-1"> 
+                                                        <Label forInput="location" value="Localização" />
+                                                        <Input name="location" className="w-full" value={data.location} readOnly />
+                                                    </Col>
                                                 </Col>
                                                 <Col xs={12} md={{ span: 3, offset: 9 }} className="mt-5 ml-5">
-                                                    <Button type="submit" variant="flat" className="">Salvar Personagem</Button>
+                                                    <Button type="submit" className="bg-blue-900">Salvar Personagem</Button>
                                                 </Col>
                                             </Row>
                                         </Col>
