@@ -21,7 +21,7 @@ class HomeController extends Controller
     {
 
         try{
-            $response = json_decode(file_get_contents(env('API_RICK_MORTY') . '2/?page=' . $page), true);
+            $response = json_decode(file_get_contents(env('API_RICK_MORTY') . 'character/?page=' . $page), true);
         }catch(\Exception $e){
             return Inertia::render('Vazio');
         }
