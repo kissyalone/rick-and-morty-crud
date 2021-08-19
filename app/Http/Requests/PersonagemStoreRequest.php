@@ -30,6 +30,8 @@ class PersonagemStoreRequest extends FormRequest
             'species' => ['required', 'max:50'],
             'image' => ['required', 'max:200'],
             'url' => ['nullable', 'max:100'],
+            'gender' => ['required', 'max:200'],
+            'location' => ['required', 'max:200'],
         ];
     }
 }
