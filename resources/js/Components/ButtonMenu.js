@@ -5,7 +5,7 @@ export default function ButtonMenu({ type = 'submit', className = '', processing
         <button
             type={type}
             className={
-                `bg-gray-300 inline-flex items-center px-4 py-2 border border-transparent text-xs text-black tracking-widest rounded-md font-bold  ` + className
+                `bg-gray-200 inline-flex items-center px-4 py-2 border border-transparent text-xs text-black tracking-widest rounded-md font-bold  ` + className
             }
             disabled={processing}
         >

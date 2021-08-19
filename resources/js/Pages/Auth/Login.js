@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import Button from '@/Components/Button';
 import Checkbox from '@/Components/Checkbox';
-import Guest from '@/Layouts/Guest';
+import Layout from '@/Layouts/Layout';
 import Input from '@/Components/Input';
 import Label from '@/Components/Label';
 import ValidationErrors from '@/Components/ValidationErrors';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import { Row, Col, Container } from 'react-bootstrap';
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -31,64 +32,69 @@ export default function Login({ status, canResetPassword }) {
     };
 
     return (
-        <Guest>
-            <Head title="Log in" />
+        <Layout>
+            <Head title="Login - Rick and Morty" />
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
             <ValidationErrors errors={errors} />
-
-            <form onSubmit={submit}>
-                <div>
-                    <Label forInput="email" value="Email" />
-
-                    <Input
-                        type="text"
-                        name="email"
-                        value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        isFocused={true}
-                        handleChange={onHandleChange}
-                    />
-                </div>
-
-                <div className="mt-4">
-                    <Label forInput="password" value="Password" />
-
-                    <Input
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="current-password"
-                        handleChange={onHandleChange}
-                    />
-                </div>
-
-                <div className="block mt-4">
-                    <label className="flex items-center">
-                        <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
-
-                        <span className="ml-2 text-sm text-gray-600">Remember me</span>
-                    </label>
-                </div>
-
-                <div className="flex items-center justify-end mt-4">
-                    {canResetPassword && (
-                        <Link
-                            href={route('password.request')}
-                            className="underline text-sm text-gray-600 hover:text-gray-900"
-                        >
-                            Forgot your password?
-                        </Link>
-                    )}
-
-                    <Button className="ml-4" processing={processing}>
-                        Log in
-                    </Button>
-                </div>
-            </form>
-        </Guest>
+            <div className="py-12">
+                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div className="p-6 bg-white border-b border-gray-200">
+                            <form onSubmit={submit} className="p-5">
+                                <Container>
+                                    <Row>
+                                        <Col xs={12} md={{ span: 10, offset:1}}>
+                                            <Col className="bg-gray-300 p-1"> 
+                                                <Label forInput="email" value="Email" />
+                                                <Input
+                                                    type="text"
+                                                    name="email"
+                                                    value={data.email}
+                                                    className=" w-full"
+                                                    autoComplete="username"
+                                                    isFocused={true}
+                                                    handleChange={onHandleChange}
+                                                />
+                                            </Col>
+                                        </Col>
+                                        <Col xs={12}  md={{ span: 10, offset:1}}>
+                                            <Col className="bg-gray-300 p-1 mt-3"> 
+                                                <Label forInput="password" value="Senha" />
+                                                <Input
+                                                    type="password"
+                                                    name="password"
+                                                    value={data.password}
+                                                    className="w-full"
+                                                    autoComplete="current-password"
+                                                    handleChange={onHandleChange}
+                                                />
+                                            </Col>
+                                        </Col>
+                                        <Col xs={12}  md={{ span: 10, offset:1}}>
+                                            <label className="flex items-center">
+                                                <Checkbox name="remember" value={data.remember} handleChange={onHandleChange} />
+                                                <span className="ml-2 text-sm text-gray-600 mt-3">Lembrar</span>
+                                            </label>
+                                        </Col>
+                                    </Row>
+                                    <Col xs={12}  md={{ span: 2, offset:10}}>
+                                        <Button className=" bg-blue-900 text-white mt-5" processing={processing}>
+                                            Entrar
+                                        </Button>
+                                    </Col>
+                                </Container>
+                            </form>
+                            <div className=" flex justify-center">
+                                <Link href={route('register')}>
+                                    Cadastre-se 
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </Layout>
     );
 }

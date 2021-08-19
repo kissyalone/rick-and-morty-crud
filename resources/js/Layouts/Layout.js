@@ -159,7 +159,7 @@ export default function Layout({ children }) {
                 </div>
             </nav>
             <main>
-                <FlashMessages />
+            <div className="flex justify-center"> <FlashMessages /> </div>
                 {children}
             </main>
         </div>
