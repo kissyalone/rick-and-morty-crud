@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { usePage } from '@inertiajs/inertia-react';
 import classNames from 'classnames';
-
+import ValidationErrors from '@/Components/ValidationErrors';
 const IconSuccess = () => (
   <svg
     className="ml-4 mr-2 flex-shrink-0 w-4 h-4 text-white fill-current"
@@ -73,9 +73,7 @@ export default () => {
           <div className="flex items-center">
             <IconDanger />
             <div className="py-4 text-white text-sm font-medium">
-              {flash.error && flash.error}
-              {numOfErrors === 1 && 'There is one form error'}
-              {numOfErrors > 1 && `There are ${numOfErrors} form errors.`}
+              <ValidationErrors errors={errors}/>
             </div>
           </div>
           <ButtonClose onClick={() => setVisible(false)} color="red" />

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import Button from '@/Components/Button';
-import Guest from '@/Layouts/Guest';
+import Layout from '@/Layouts/Layout';
 import Input from '@/Components/Input';
 import Label from '@/Components/Label';
-import ValidationErrors from '@/Components/ValidationErrors';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import { Row, Col, Container } from 'react-bootstrap';
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -31,78 +31,93 @@ export default function Register() {
     };
 
     return (
-        <Guest>
-            <Head title="Register" />
+        <Layout>
+            <Head title="Registrar-se - Rick and Morty"/>
+            <div className="py-12">
+                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                        <div className="p-6 bg- white border-b border-gray-200">
+                            <div className="flex items-center justify-center m-2">
+                                    <h1>Criar conta</h1>
+                            </div>
+                            <form onSubmit={submit}>
+                                <Container>
+                                    <Row>
+                                        <Col xs={12} md={{ span: 10, offset:1}}>
+                                            <Col className="bg-gray-300 p-1"> 
+                                                <Label forInput="name" value="Nome" />
+                                                <Input
+                                                    type="text"
+                                                    name="name"
+                                                    value={data.name}
+                                                    className=" w-full"
+                                                    autoComplete="username"
+                                                    isFocused={true}
+                                                    handleChange={onHandleChange}
+                                                />
+                                            </Col>
+                                        </Col>
 
-            <ValidationErrors errors={errors} />
+                                        <Col xs={12} md={{ span: 10, offset:1}}>
+                                            <Col className="bg-gray-300 p-1"> 
+                                                <Label forInput="email" value="Email" />
+                                                <Input
+                                                    type="text"
+                                                    name="email"
+                                                    value={data.email}
+                                                    className=" w-full"
+                                                    autoComplete="username"
+                                                    isFocused={true}
+                                                    handleChange={onHandleChange}
+                                                />
+                                            </Col>
+                                        </Col>
 
-            <form onSubmit={submit}>
-                <div>
-                    <Label forInput="name" value="Name" />
+                                        <Col xs={12}  md={{ span: 10, offset:1}}>
+                                            <Col className="bg-gray-300 p-1"> 
+                                                <Label forInput="password" value="Senha" />
+                                                <Input
+                                                    type="password"
+                                                    name="password"
+                                                    value={data.password}
+                                                    className="w-full"
+                                                    autoComplete="current-password"
+                                                    handleChange={onHandleChange}
+                                                />
+                                            </Col>
+                                        </Col>
 
-                    <Input
-                        type="text"
-                        name="name"
-                        value={data.name}
-                        className="mt-1 block w-full"
-                        autoComplete="name"
-                        isFocused={true}
-                        handleChange={onHandleChange}
-                        required
-                    />
-                </div>
+                                        <Col xs={12}  md={{ span: 10, offset:1}}>
+                                            <Col className="bg-gray-300 p-1"> 
+                                                <Label forInput="password_confirmation" value="Confirmar Senha" />
+                                                <Input
+                                                    type="password"
+                                                    name="password_confirmation"
+                                                    value={data.password_confirmation}
+                                                    className="w-full"
+                                                    autoComplete="current-password"
+                                                    handleChange={onHandleChange}
+                                                />
+                                            </Col>
+                                        </Col>
+                                    </Row>
+                                    <Col xs={12}  md={{ span: 2, offset:10}}>
+                                        <Button className=" bg-blue-900 text-white mt-5" processing={processing}>
+                                            Registrar-se
+                                        </Button>
+                                    </Col>
+                                </Container>
 
-                <div className="mt-4">
-                    <Label forInput="email" value="Email" />
-
-                    <Input
-                        type="email"
-                        name="email"
-                        value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
-                        handleChange={onHandleChange}
-                        required
-                    />
-                </div>
-
-                <div className="mt-4">
-                    <Label forInput="password" value="Password" />
-
-                    <Input
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="new-password"
-                        handleChange={onHandleChange}
-                        required
-                    />
-                </div>
-
-                <div className="mt-4">
-                    <Label forInput="password_confirmation" value="Confirm Password" />
-
-                    <Input
-                        type="password"
-                        name="password_confirmation"
-                        value={data.password_confirmation}
-                        className="mt-1 block w-full"
-                        handleChange={onHandleChange}
-                        required
-                    />
-                </div>
-
-                <div className="flex items-center justify-end mt-4">
-                    <Link href={route('login')} className="underline text-sm text-gray-600 hover:text-gray-900">
-                        Already registered?
-                    </Link>
-
-                    <Button className="ml-4" processing={processing}>
-                        Register
-                    </Button>
-                </div>
-            </form>
-        </Guest>
+                                <div className="flex items-center justify-center">
+                                    <Link href={route('login')} className="underline text-sm text-gray-600 hover:text-gray-900">
+                                        Já possui conta? Entrar
+                                    </Link>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </Layout>
     );
 }
