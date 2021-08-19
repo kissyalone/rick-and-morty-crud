@@ -6,6 +6,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Personagem;
+use App\Models\User;
 use App\Http\Requests\PersonagemUpdateRequest;
 
 class PersonagensController extends Controller
@@ -41,6 +42,6 @@ class PersonagensController extends Controller
 
         $personagem->delete();
 
-        return Redirect::back()->with('success', 'Personagem deletado.');
+        return Redirect::route('personagem')->with('success', 'Personagem deletado.');
     }
 }
