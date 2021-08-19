@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 
 require __DIR__.'/auth.php';
 
@@ -17,6 +16,7 @@ Route::post('/personagem/store')->name('personagem.store')->uses('HomeController
 Route::get('/personagens')->name('personagem')->uses('PersonagensController@index')->middleware('auth');
 Route::get('/meu/personagem/{id}')->name('meu.personagem.detalhe')->uses('PersonagensController@MeuPersonagemDetalhe')->middleware('auth');
 Route::put('/meu/personagem/{id}')->name('meu.personagem.update')->uses('PersonagensController@MeuPersonagemDetalheUpdate')->middleware('auth');
+Route::delete('/meu/personagem/{id}')->name('meu.personagem.delete')->uses('PersonagensController@MeuPersonagemDelete')->middleware('auth');
 
 //Sobre
 Route::get('/sobre')->name('sobre')->uses('SobreController');
