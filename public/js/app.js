@@ -4381,11 +4381,11 @@ var ButtonClose = function ButtonClose(_ref) {
   }, [flash, errors]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     children: [flash.success && visible && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: "mb-8 flex items-center justify-between bg-green-500 rounded max-w-3xl",
+      className: " flex items-center justify-between bg-green-500 rounded max-w-3xl w-full",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: "flex items-center",
+        className: "flex items-center w-full",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(IconSuccess, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "py-4 text-white text-sm font-medium",
+          className: "py-4 text-white text-sm font-medium w-full",
           children: flash.success
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ButtonClose, {
@@ -4395,7 +4395,7 @@ var ButtonClose = function ButtonClose(_ref) {
         color: "green"
       })]
     }), (flash.error || numOfErrors > 0) && visible && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-      className: "mb-8 flex items-center justify-between bg-red-500 rounded max-w-3xl",
+      className: " flex items-center justify-between bg-red-500 rounded max-w-3xl",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "flex items-center",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(IconDanger, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -5038,7 +5038,7 @@ function Layout(_ref) {
                         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_Components_ButtonMenu__WEBPACK_IMPORTED_MODULE_7__.default, {
                           type: "button",
                           className: "inline-flex items-center border border-transparent leading-4 rounded-md text-black bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150",
-                          children: [auth.name.split(' ').slice(0, -2).join(' '), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
+                          children: [auth.name.split(' ', 1).join(' '), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("svg", {
                             className: "ml-2 -mr-0.5 h-4 w-4",
                             xmlns: "http://www.w3.org/2000/svg",
                             viewBox: "0 0 20 20",
@@ -5160,7 +5160,7 @@ function Layout(_ref) {
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("main", {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "flex justify-center",
+        className: "flex justify-center w-full",
         children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Components_FlashMessages__WEBPACK_IMPORTED_MODULE_5__.default, {}), " "]
       }), children]
     })]

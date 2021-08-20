@@ -59,7 +59,7 @@ export default function Layout({ children }) {
                                                         type="button"
                                                         className="inline-flex items-center border border-transparent leading-4 rounded-md text-black bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                                     >
-                                                        {auth.name.split(' ').slice(0, -2).join(' ')}
+                                                        {auth.name.split(' ',1).join(' ')}
                                                         <svg className="ml-2 -mr-0.5 h-4 w-4"
                                                             xmlns="http://www.w3.org/2000/svg"
                                                             viewBox="0 0 20 20"
@@ -159,7 +159,7 @@ export default function Layout({ children }) {
                 </div>
             </nav>
             <main>
-            <div className="flex justify-center"> <FlashMessages /> </div>
+            <div className="flex justify-center w-full"> <FlashMessages /> </div>
                 {children}
             </main>
         </div>
