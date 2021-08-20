@@ -57,9 +57,9 @@ export default function Layout({ children }) {
                                                 <span className="inline-flex rounded-md">
                                                     <ButtonMenu
                                                         type="button"
-                                                        className="inline-flex items-center border border-transparent leading-4 rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
+                                                        className="inline-flex items-center border border-transparent leading-4 rounded-md text-black bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150"
                                                     >
-                                                        {auth.name}
+                                                        {auth.name.split(' ').slice(0, -2).join(' ')}
                                                         <svg className="ml-2 -mr-0.5 h-4 w-4"
                                                             xmlns="http://www.w3.org/2000/svg"
                                                             viewBox="0 0 20 20"

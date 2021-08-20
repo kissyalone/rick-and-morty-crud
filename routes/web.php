@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 require __DIR__.'/auth.php';
 
@@ -21,7 +22,11 @@ Route::delete('/meu/personagem/{id}')->name('meu.personagem.delete')->uses('Pers
 //Sobre
 Route::get('/sobre')->name('sobre')->uses('SobreController');
 
-//Vazio
+//Outros
 Route::inertia('/vazio', 'Vazio');
+Route::inertia('/vazio', 'Vazio');
+Route::get('linkedin', function () {
+    return Inertia::location('https://br.linkedin.com/in/jhousouza2');
+})->name('linkedin');
 
 

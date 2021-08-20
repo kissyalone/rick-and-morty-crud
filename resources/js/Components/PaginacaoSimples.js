@@ -1,19 +1,33 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import Button from '@/Components/Button';
+import { Link } from '@inertiajs/inertia-react';
 
 export default function Paginacao({ paginacao }) {
     return (
-        <div className="m-3 d-flex justify-content-center">
+        <div className="mt-5 d-flex justify-content-center">
             {paginacao.anterior ? (
-                <Button href={route('page', paginacao.anterior)} variant="link" className="m-2">Anterior</Button>
+                <Link href={route('page', paginacao.anterior)} style={{ textDecoration: 'none' }}>
+                    <Button className="bg-blue-700 m-2">
+                        Anterior
+                    </Button>
+                </Link>
             ) : (
-                <Button variant="link" disabled className="m-2">Anteriror</Button>
+                
+                <Button className="bg-blue-700 m-2" processing>
+                    Anterior
+                </Button>
             )}
             {' '}
             {paginacao.proxima ? (
-                <Button href={route('page', paginacao.proxima)} variant="link" className="m-2">Próxima</Button>
+                <Link href={route('page', paginacao.proxima)} style={{ textDecoration: 'none' }}>
+                    <Button className="bg-blue-700 m-2">
+                    Próxima
+                    </Button>
+                </Link>
             ) : (
-                <Button variant="link" disabled className="m-2">Próxima</Button>
+                <Button className="bg-blue-700 m-2" processing>
+                    Próxima
+                </Button>
             )}
         </div>
     );
