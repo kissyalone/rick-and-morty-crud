@@ -11,7 +11,7 @@
 </p>
 <br>
 
-## Construido com
+## Construído com
 > ### [React.js][1]
 > ### [Laravel][2]
 > ### [Inertia.js][3]
