@@ -1,4 +1,4 @@
-# Rick and Mort API 
+# Rick and Morty - Protótipo 
 <!-- ![Glootie - Rick and Morty](https://github.com/kissyalone/rick-and-morty-vitafor/blob/master/public/img/glootie.png?raw=true) -->
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
