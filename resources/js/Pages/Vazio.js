@@ -15,7 +15,7 @@ export default function Vazio(props) {
                             <Container>
                                 <Row>
                                     <div class="flex items-center ...">
-                                        <div><p className="text-center text-5xl">404/500 Nada encontrado </p></div>
+                                        <div><p className="text-center text-5xl">404 Nada encontrado </p></div>
                                         <div><Image src={VazioImg} /></div>
                                     </div> 
                                 </Row>
