@@ -1,4 +1,4 @@
-# Rick and Morty - Protótipo 
+# Rick and Morty - Site protótipo 
 <!-- ![Glootie - Rick and Morty](https://github.com/kissyalone/rick-and-morty-vitafor/blob/master/public/img/glootie.png?raw=true) -->
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
