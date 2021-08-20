@@ -1,4 +1,4 @@
-# rick-and-morty-vitafor
+# Rick and Mort API 
 <!-- ![Glootie - Rick and Morty](https://github.com/kissyalone/rick-and-morty-vitafor/blob/master/public/img/glootie.png?raw=true) -->
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
@@ -19,7 +19,7 @@
 > ### [Rick And Morty Api][5]
 <br><br>
 
-## instalação
+## Instalação
 
 Clone o repositório:
 ```sh 
