@@ -23,7 +23,11 @@
 
 Clone o repositório:
 ```sh 
-git clone https://github.com/landish/rick-and-morty-vitafor.git
+git clone https://github.com/kissyalone/rick-and-morty-vitafor.git
+```
+Entre na pasta gerada
+```sh
+cd rick-and-morty-vitafor
 ```
 Instale as dependências do PHP:
 ```sh
